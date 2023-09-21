@@ -8,10 +8,8 @@ class Preview extends StatelessWidget {
   const Preview({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Container(
-        
-      );
+    return Scaffold(
+      body: Container(),
     );
   }
 }
