@@ -29,11 +29,13 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                label: "HOME",
-                  icon: Icon(Icons.home), backgroundColor: Colors.green),
+                  label: "HOME",
+                  icon: Icon(Icons.home),
+                  backgroundColor: Colors.green),
               BottomNavigationBarItem(
-                label: "Search",
-                  icon: Icon(Icons.search), backgroundColor: Colors.yellow),
+                  label: "Search",
+                  icon: Icon(Icons.search),
+                  backgroundColor: Colors.yellow),
               BottomNavigationBarItem(
                 label: "Person",
                 icon: Icon(Icons.person),
