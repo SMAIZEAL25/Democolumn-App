@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:democolumn_app/gallary.dart';
+//import 'package:democolumn_app/gallary.dart';
 
 void main() {
   runApp(const MyApp());

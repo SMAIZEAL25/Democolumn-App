@@ -22,11 +22,21 @@ class MyScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.menu), // Leading icon
-        title: Expanded(
-          child: Center(
-            child: Image.asset('your_image.png'), // Your image goes here
+        title: Center(
+          child: Stack(
+            children: [
+              Positioned(
+                // first image inside the appbar
+                child: Image.asset('images/Rectangle.jpg'),
+              ),
+              Positioned(
+                // second image inside the appbar
+                child: Image.asset('images/Ear_phone.jpg'),
+              ),
+            ],
           ),
         ),
+
         actions: [
           IconButton(
             icon: const Icon(Icons.search), // Another icon on the right side
@@ -36,8 +46,23 @@ class MyScaffold extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('Your content goes here'),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.grey,
+              child: const Text('First Expanded',
+                  style: TextStyle(color: Colors.white)),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: const Text('Second Expanded',
+                  style: TextStyle(color: Colors.white)),
+            ),
+          ),
+        ],
       ),
     );
   }
