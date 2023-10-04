@@ -1,3 +1,5 @@
+import 'package:democolumn_app/gallary.dart';
+import 'package:democolumn_app/preview.dart';
 import 'package:flutter/material.dart';
 //import 'package:democolumn_app/gallary.dart';
 
@@ -14,6 +16,11 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
+  List<Widget> selectedWidget = [
+    const Foxaixs(),
+    const MyScaffold(),
+    const Gallary_page()
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -50,8 +57,7 @@ class _MyAppState extends State<MyApp> {
             elevation: 5),
         body: Column(
           children: [
-            Image.asset('images/car.jpeg'),
-            const Expanded(child: Foxaixs()),
+            Expanded(child: selectedWidget[_selectedIndex]),
             // const SizedBox(child: Floatbutton()),
           ],
         ),
