@@ -114,6 +114,8 @@ class signin_page extends StatelessWidget {
                         onPressed: () {
                           if (isLoading) return;
                           setState(() => isLoading = true);
+                          await Future.delayed(Duration(seconds: 5));
+                          setState(() => isLoading = false);
                         },
                         child: isLoading
                             ? const CircularProgressIndicator(
