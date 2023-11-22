@@ -1,156 +1,165 @@
-import 'package:democolumn_app/gallary.dart';
-import 'package:democolumn_app/preview.dart';
 import 'package:flutter/material.dart';
-//import 'package:democolumn_app/gallary.dart';
+import 'package:democolumn_app/my_buttons.dart';
+import 'package:democolumn_app/mytext_field.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(signin_page());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+// void main() {
+//   runApp(const MyWidget());
+// }
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+class signin_page extends StatelessWidget {
+  signin_page({super.key});
 
-class _MyAppState extends State<MyApp> {
-  int _selectedIndex = 0;
-  List<Widget> selectedWidget = [
-    const Foxaixs(),
-    const MyScaffold(),
-    const Gallary_page()
-  ];
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  static const TextStyle textfeildStyle =
+      TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
+
+  void signUserin() {}
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  label: "HOME",
-                  icon: Icon(Icons.home),
-                  backgroundColor: Colors.green),
-              BottomNavigationBarItem(
-                  label: "Search",
-                  icon: Icon(Icons.search),
-                  backgroundColor: Colors.yellow),
-              BottomNavigationBarItem(
-                label: "Person",
-                icon: Icon(Icons.person),
-                backgroundColor: Colors.blue,
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(246, 218, 219, 221),
+      body: ////SafeArea(
+          SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            reverse: true,
+            child: Center(
+              child: Column(
+                children: [
+                  //logo
+                  const SizedBox(
+                    height: 300,
+                    child: Image(
+                      image: AssetImage('image/nike.jpg'),
+                    ),
+                  ),
+                  //welcome text
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Welcome !',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                  //Get better experience with our online internet banking
+                  Row(
+                    children: [
+                      const Text(
+                        'Get better experience with our online',
+                        style: textfeildStyle,
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'internet banking',
+                            style: TextStyle(color: Colors.black),
+                          ))
+                    ],
+                  ),
+                  //internet banking
+
+                  //****************fontFamily: AutofillHints.addressCity),),************************
+                  const SizedBox(height: 70),
+                  //username textfield
+                  Center(
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: TextField(
+                          decoration: textFormField.copyWith(
+                            prefixIcon: const Icon(Icons.person),
+                            // suffixIcon: IconButton(
+                            //   onPressed: () {},
+                            //   icon: const Icon(Icons.visibility,
+                            //       color: Colors.black),
+                            // ),
+                            labelText: 'Username',
+                            hintText: 'Enter your username or email address',
+                          ),
+                        )),
+                  ),
+                  const SizedBox(height: 10),
+                  //password texfield
+                  Center(
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: TextField(
+                          decoration: textFormField.copyWith(
+                            prefixIcon: const Icon(Icons.lock),
+                            suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.visibility,
+                                  color: Colors.black),
+                            ),
+                            labelText: 'Password',
+                            hintText: 'Enter your password',
+                          ),
+                        )),
+                  ),
+                  //password field ends here
+                  const SizedBox(height: 10),
+                  Mybutton(onTap: signUserin),
+                  const SizedBox(height: 10),
+                  //forgotpassword field
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Forgot ?',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, '/signup');
+                            },
+                            child: const Text(
+                              'Sign up',
+                              style: TextStyle(color: Colors.white),
+                            ))
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+
+                  //sigin or contuine with
+
+                  //google account
+
+                  //apple account
+
+                  // not a member with an option to register
+                ],
               ),
-            ],
-            type: BottomNavigationBarType.shifting,
-            currentIndex: _selectedIndex,
-            selectedItemColor: Colors.black,
-            iconSize: 40,
-            onTap: _onItemTapped,
-            elevation: 5),
-        body: Column(
-          children: [
-            Expanded(child: selectedWidget[_selectedIndex]),
-            // const SizedBox(child: Floatbutton()),
-          ],
+            ),
+          ),
         ),
       ),
     );
+    //////////////),
   }
 }
 
-class Foxaixs extends StatelessWidget {
-  const Foxaixs({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.2,
-          child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                          color: Colors.black, shape: BoxShape.circle),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            'item $index',
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )),
-                );
-              }),
-        ),
-        Expanded(
-          child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                    alignment: Alignment.center,
-                    color: Colors.black,
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      'item $index',
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ));
-              }),
-        ),
-      ],
-    );
-  }
-}
-
-class Floatbutton extends StatelessWidget {
-  const Floatbutton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Scaffold(
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: const FloatingActionButton(
-              onPressed: null,
-              backgroundColor: Colors.black,
-              tooltip: 'increment Counter',
-              child: Icon(Icons.shop_2)),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'profile',
-              ),
-            ],
-            onTap: (int index) {},
-            selectedItemColor: Colors.orangeAccent,
-          )),
-    );
-  }
-}
+var textFormField = InputDecoration(
+  border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+  enabledBorder: OutlineInputBorder(
+      borderSide: const BorderSide(color: Colors.purpleAccent, width: 1),
+      borderRadius: BorderRadius.circular(25)),
+  focusedBorder: OutlineInputBorder(
+    borderSide: const BorderSide(color: Colors.purpleAccent, width: 2),
+    borderRadius: BorderRadius.circular(25),
+  ),
+);
