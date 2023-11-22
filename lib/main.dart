@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:democolumn_app/my_buttons.dart';
-import 'package:democolumn_app/mytext_field.dart';
 
 void main() {
   runApp(signin_page());
@@ -20,129 +19,151 @@ class signin_page extends StatelessWidget {
       TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
 
   void signUserin() {}
+  //loading spinner
+  bool isLoading = true;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(246, 218, 219, 221),
-      body: ////SafeArea(
-          SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-            reverse: true,
-            child: Center(
-              child: Column(
-                children: [
-                  //logo
-                  const SizedBox(
-                    height: 300,
-                    child: Image(
-                      image: AssetImage('image/nike.jpg'),
-                    ),
-                  ),
-                  //welcome text
-                  const SizedBox(height: 20),
-                  const Text(
-                    'Welcome !',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),
-                  ),
-                  //Get better experience with our online internet banking
-                  Row(
-                    children: [
-                      const Text(
-                        'Get better experience with our online',
-                        style: textfeildStyle,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: ////SafeArea(
+            SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              reverse: true,
+              child: Center(
+                child: Column(
+                  children: [
+                    //logo
+                    const SizedBox(
+                      height: 300,
+                      child: Image(
+                        image: AssetImage('image/nike.png'),
                       ),
-                      TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'internet banking',
-                            style: TextStyle(color: Colors.black),
-                          ))
-                    ],
-                  ),
-                  //internet banking
-
-                  //****************fontFamily: AutofillHints.addressCity),),************************
-                  const SizedBox(height: 70),
-                  //username textfield
-                  Center(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextField(
-                          decoration: textFormField.copyWith(
-                            prefixIcon: const Icon(Icons.person),
-                            // suffixIcon: IconButton(
-                            //   onPressed: () {},
-                            //   icon: const Icon(Icons.visibility,
-                            //       color: Colors.black),
-                            // ),
-                            labelText: 'Username',
-                            hintText: 'Enter your username or email address',
-                          ),
-                        )),
-                  ),
-                  const SizedBox(height: 10),
-                  //password texfield
-                  Center(
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: TextField(
-                          decoration: textFormField.copyWith(
-                            prefixIcon: const Icon(Icons.lock),
-                            suffixIcon: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.visibility,
-                                  color: Colors.black),
-                            ),
-                            labelText: 'Password',
-                            hintText: 'Enter your password',
-                          ),
-                        )),
-                  ),
-                  //password field ends here
-                  const SizedBox(height: 10),
-                  Mybutton(onTap: signUserin),
-                  const SizedBox(height: 10),
-                  //forgotpassword field
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Forgot ?',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, '/signup');
-                            },
-                            child: const Text(
-                              'Sign up',
-                              style: TextStyle(color: Colors.white),
-                            ))
-                      ],
                     ),
-                  ),
-                  const SizedBox(height: 20),
+                    //welcome text
+                    const SizedBox(height: 20),
+                    // const Text(
+                    //   'Welcome !',
+                    //   style: TextStyle(
+                    //     fontSize: 25,
+                    //     color: Colors.white,
+                    //   ),
+                    // ),
+                    //Get better experience with our online internet banking
+                    // Row(
+                    //   children: [
+                    //     const Text(
+                    //       'Get better experience with our online',
+                    //       style: textfeildStyle,
+                    //     ),
+                    //     TextButton(
+                    //         onPressed: () {},
+                    //         child: const Text(
+                    //           'internet banking',
+                    //           style: TextStyle(color: Colors.black),
+                    //         ))
+                    //   ],
+                    // ),
+                    //internet banking
 
-                  //sigin or contuine with
+                    //****************fontFamily: AutofillHints.addressCity),),************************
+                    const SizedBox(height: 70),
+                    //username textfield
+                    Center(
+                      child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: TextField(
+                            decoration: textFormField.copyWith(
+                              prefixIcon: const Icon(Icons.person),
+                              // suffixIcon: IconButton(
+                              //   onPressed: () {},
+                              //   icon: const Icon(Icons.visibility,
+                              //       color: Colors.black),
+                              // ),
+                              labelText: 'Username',
+                              hintText: 'Enter your username or email address',
+                            ),
+                          )),
+                    ),
+                    const SizedBox(height: 10),
+                    //password texfield
+                    Center(
+                      child: Padding(
+                          padding: const EdgeInsets.all(17),
+                          child: TextField(
+                            decoration: textFormField.copyWith(
+                              prefixIcon: const Icon(Icons.lock),
+                              suffixIcon: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.visibility,
+                                    color: Colors.black),
+                              ),
+                              labelText: 'Password',
+                              hintText: 'Enter your password',
+                            ),
+                          )),
+                    ),
+                    //password field ends here
+                    Material(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(25),
+                      child: MaterialButton(
+                        onPressed: () {
+                          if (isLoading) return;
+                          setState(() => isLoading = true);
+                        },
+                        child: isLoading
+                            ? const CircularProgressIndicator(
+                                color: Colors.white)
+                            : const Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                      ),
+                    ),
+                    //forgotpassword field
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Forgot ?',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/signup');
+                              },
+                              child: const Text(
+                                'Sign up',
+                                style: TextStyle(color: Colors.black),
+                              ))
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
 
-                  //google account
+                    //sigin or contuine with
 
-                  //apple account
+                    //google account
 
-                  // not a member with an option to register
-                ],
+                    //apple account
+
+                    // not a member with an option to register
+                  ],
+                ),
               ),
             ),
           ),
@@ -156,10 +177,12 @@ class signin_page extends StatelessWidget {
 var textFormField = InputDecoration(
   border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
   enabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.purpleAccent, width: 1),
+      borderSide:
+          const BorderSide(color: Color.fromARGB(255, 12, 12, 12), width: 1),
       borderRadius: BorderRadius.circular(25)),
   focusedBorder: OutlineInputBorder(
-    borderSide: const BorderSide(color: Colors.purpleAccent, width: 2),
+    borderSide:
+        const BorderSide(color: Color.fromARGB(255, 12, 12, 12), width: 2),
     borderRadius: BorderRadius.circular(25),
   ),
 );
