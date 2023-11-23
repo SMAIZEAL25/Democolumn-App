@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:democolumn_app/my_buttons.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+//import 'package:democolumn_app/my_buttons.dart';
 
 void main() {
-  runApp(signin_page());
+  runApp(const signin_page());
 }
 
 // void main() {
 //   runApp(const MyWidget());
 // }
 
-class signin_page extends StatelessWidget {
-  signin_page({super.key});
+class signin_page extends StatefulWidget {
+  const signin_page({super.key});
 
+  @override
+  State<signin_page> createState() => _signin_pageState();
+}
+
+class _signin_pageState extends State<signin_page> {
+  @override
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -27,8 +35,7 @@ class signin_page extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ////SafeArea(
-            SafeArea(
+        body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -44,27 +51,27 @@ class signin_page extends StatelessWidget {
                       ),
                     ),
                     //welcome text
-                    const SizedBox(height: 20),
-                    // const Text(
-                    //   'Welcome !',
-                    //   style: TextStyle(
-                    //     fontSize: 25,
-                    //     color: Colors.white,
-                    //   ),
-                    // ),
+                    const SizedBox(height: 30),
+                    Text(
+                      'welcome back ',
+                      style: GoogleFonts.bebasNeue(
+                        fontSize: 30,
+                        color: Colors.black,
+                      ),
+                    ),
                     //Get better experience with our online internet banking
-                    // Row(
+                    // const Row(
                     //   children: [
-                    //     const Text(
-                    //       'Get better experience with our online',
-                    //       style: textfeildStyle,
+                    //     Text(
+                    //       'Welcome',
+                    //       style: TextStyle(color: Colors.black),
                     //     ),
                     //     TextButton(
                     //         onPressed: () {},
                     //         child: const Text(
                     //           'internet banking',
                     //           style: TextStyle(color: Colors.black),
-                    //         ))
+                    //     //         ))
                     //   ],
                     // ),
                     //internet banking
@@ -107,27 +114,42 @@ class signin_page extends StatelessWidget {
                           )),
                     ),
                     //password field ends here
-                    Material(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(25),
-                      child: MaterialButton(
-                        onPressed: () {
-                          if (isLoading) return;
-                          setState(() => isLoading = true);
-                          await Future.delayed(Duration(seconds: 5));
-                          setState(() => isLoading = false);
-                        },
-                        child: isLoading
-                            ? const CircularProgressIndicator(
-                                color: Colors.white)
-                            : const Text(
-                                'Login',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Material(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(25),
+                        child: MaterialButton(
+                          child: isLoading
+                              ? const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                      CircularProgressIndicator(
+                                          color: Colors.white),
+                                      SizedBox(width: 24),
+                                      Text(
+                                        'Please Wait...',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ])
+                              : const Text(
+                                  'Login',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
+                          onPressed: () async {
+                            if (isLoading) return;
+                            setState(() => isLoading = true);
+                            await Future.delayed(
+                                const Duration(milliseconds: 2));
+                            setState(() => isLoading = false);
+                          },
+                        ),
                       ),
                     ),
                     //forgotpassword field
@@ -136,22 +158,27 @@ class signin_page extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'Forgot ?',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                          TextButton(
+                          GestureDetector(
+                            child: TextButton(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, '/signup');
+                                Navigator.pushReplacementNamed(context, '/');
                               },
                               child: const Text(
-                                'Sign up',
+                                'Forgot ?',
                                 style: TextStyle(color: Colors.black),
-                              ))
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            child: TextButton(
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(context, '');
+                                },
+                                child: const Text(
+                                  'Sign up',
+                                  style: TextStyle(color: Colors.black),
+                                )),
+                          )
                         ],
                       ),
                     ),
