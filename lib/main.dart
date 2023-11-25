@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//import 'package:democolumn_app/my_buttons.dart';
-
 void main() {
   runApp(const signin_page());
 }
-
-// void main() {
-//   runApp(const MyWidget());
-// }
 
 class signin_page extends StatefulWidget {
   const signin_page({super.key});
@@ -22,6 +16,7 @@ class _signin_pageState extends State<signin_page> {
   @override
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  bool passwordVisible = false;
 
   static const TextStyle textfeildStyle =
       TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
@@ -80,32 +75,51 @@ class _signin_pageState extends State<signin_page> {
                     const SizedBox(height: 70),
                     //username textfield
                     Center(
-                      child: Padding(
-                          padding: const EdgeInsets.all(20),
-                          child: TextField(
-                            decoration: textFormField.copyWith(
-                              prefixIcon: const Icon(Icons.person),
-                              // suffixIcon: IconButton(
-                              //   onPressed: () {},
-                              //   icon: const Icon(Icons.visibility,
-                              //       color: Colors.black),
-                              // ),
-                              labelText: 'Username',
-                              hintText: 'Enter your username or email address',
-                            ),
-                          )),
-                    ),
+                        child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: TextFormField(
+                        //validation to check if this field is empty and the type of error message it's should return
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Please this fiel is required';
+                          }
+                          return null;
+                        },
+                        decoration: textFormField.copyWith(
+                          prefixIcon: const Icon(Icons.person),
+                          // suffixIcon: IconButton(
+                          //   onPressed: () {},
+                          //   icon: const Icon(Icons.visibility,
+                          //       color: Colors.black),
+                          // ),
+                          labelText: 'Email Address',
+                          hintText: 'Enter your username or email address',
+                        ),
+                      ),
+                    )),
+
                     const SizedBox(height: 10),
                     //password texfield
                     Center(
                       child: Padding(
                           padding: const EdgeInsets.all(17),
                           child: TextField(
+                            //obscuretext depends on the value of passwordVisible which has been set to true or false
+                            obscureText: passwordVisible,
                             decoration: textFormField.copyWith(
                               prefixIcon: const Icon(Icons.lock),
+                              //password visibilty change set state controller set change to true or false
                               suffixIcon: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.visibility,
+                                onPressed: () {
+                                  setState(() {
+                                    passwordVisible = !passwordVisible;
+                                  });
+                                },
+                                icon: Icon(
+                                    // condidtional statement that returns the visibility or not visibile when this icon is clicked on
+                                    passwordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
                                     color: Colors.black),
                               ),
                               labelText: 'Password',
@@ -113,6 +127,7 @@ class _signin_pageState extends State<signin_page> {
                             ),
                           )),
                     ),
+
                     //password field ends here
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 20),
@@ -164,7 +179,7 @@ class _signin_pageState extends State<signin_page> {
                                 Navigator.pushReplacementNamed(context, '/');
                               },
                               child: const Text(
-                                'Forgot ?',
+                                'Forgot Password ?',
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
@@ -172,7 +187,8 @@ class _signin_pageState extends State<signin_page> {
                           GestureDetector(
                             child: TextButton(
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, '');
+                                  Navigator.pushReplacementNamed(
+                                      context, '/forgot_pw_screen');
                                 },
                                 child: const Text(
                                   'Sign up',
