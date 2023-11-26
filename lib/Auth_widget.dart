@@ -69,12 +69,12 @@ class AuthMainButton extends StatelessWidget {
 }
 
 class AlreadyHaveAccount extends StatelessWidget {
-  final String HaveAccount;
+  final String haveAccount;
   final String actionLabel;
   final Function() onPressed;
   const AlreadyHaveAccount({
     Key? key,
-    required this.HaveAccount,
+    required this.haveAccount,
     required this.actionLabel,
     required this.onPressed,
   }) : super(key: key);
@@ -85,7 +85,7 @@ class AlreadyHaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Text(
-          HaveAccount,
+          haveAccount,
           style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
         ),
         TextButton(

@@ -176,7 +176,7 @@ class _signup_page extends State<signup_page> {
                             )),
                       ),
                       AlreadyHaveAccount(
-                        HaveAccount: 'Already have account',
+                        haveAccount: 'Already have account',
                         actionLabel: 'Login',
                         onPressed: () {},
                       ),
