@@ -18,8 +18,9 @@ class _signin_pageState extends State<signin_page> {
   final passwordController = TextEditingController();
   bool passwordVisible = false;
 
-  static const TextStyle textfeildStyle =
-      TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
+  // this for the sign up page
+  // static const TextStyle textfeildStyle =
+  //     TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
 
   void signUserin() {}
   //loading spinner
@@ -54,117 +55,103 @@ class _signin_pageState extends State<signin_page> {
                         color: Colors.black,
                       ),
                     ),
-                    //Get better experience with our online internet banking
-                    // const Row(
-                    //   children: [
-                    //     Text(
-                    //       'Welcome',
-                    //       style: TextStyle(color: Colors.black),
-                    //     ),
-                    //     TextButton(
-                    //         onPressed: () {},
-                    //         child: const Text(
-                    //           'internet banking',
-                    //           style: TextStyle(color: Colors.black),
-                    //     //         ))
-                    //   ],
-                    // ),
-                    //internet banking
 
                     //****************fontFamily: AutofillHints.addressCity),),************************
-                    const SizedBox(height: 70),
-                    //username textfield
-                    Center(
-                        child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: TextFormField(
-                        //validation to check if this field is empty and the type of error message it's should return
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please this fiel is required';
-                          }
-                          return null;
-                        },
-                        decoration: textFormField.copyWith(
-                          prefixIcon: const Icon(Icons.person),
-                          // suffixIcon: IconButton(
-                          //   onPressed: () {},
-                          //   icon: const Icon(Icons.visibility,
-                          //       color: Colors.black),
-                          // ),
-                          labelText: 'Email Address',
-                          hintText: 'Enter your username or email address',
-                        ),
-                      ),
-                    )),
-
-                    const SizedBox(height: 10),
-                    //password texfield
-                    Center(
-                      child: Padding(
-                          padding: const EdgeInsets.all(17),
-                          child: TextField(
-                            //obscuretext depends on the value of passwordVisible which has been set to true or false
-                            obscureText: passwordVisible,
-                            decoration: textFormField.copyWith(
-                              prefixIcon: const Icon(Icons.lock),
-                              //password visibilty change set state controller set change to true or false
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    passwordVisible = !passwordVisible;
-                                  });
-                                },
-                                icon: Icon(
-                                    // condidtional statement that returns the visibility or not visibile when this icon is clicked on
-                                    passwordVisible
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                    color: Colors.black),
+                    Form(
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 70),
+                          //username textfield
+                          Center(
+                              child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: TextFormField(
+                              //validation to check if this field is empty and the type of error message it's should return
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please this fiel is required';
+                                }
+                                return null;
+                              },
+                              decoration: textFormField.copyWith(
+                                prefixIcon: const Icon(Icons.person),
+                                labelText: 'Email Address',
+                                hintText: 'Enter your email address',
                               ),
-                              labelText: 'Password',
-                              hintText: 'Enter your password',
                             ),
                           )),
-                    ),
 
-                    //password field ends here
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      child: Material(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(25),
-                        child: MaterialButton(
-                          child: isLoading
-                              ? const Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                      CircularProgressIndicator(
-                                          color: Colors.white),
-                                      SizedBox(width: 24),
-                                      Text(
-                                        'Please Wait...',
+                          const SizedBox(height: 10),
+                          //password texfield
+                          Center(
+                            child: Padding(
+                                padding: const EdgeInsets.all(17),
+                                child: TextField(
+                                  //obscuretext depends on the value of passwordVisible which has been set to true or false
+                                  obscureText: passwordVisible,
+                                  decoration: textFormField.copyWith(
+                                    prefixIcon: const Icon(Icons.lock),
+                                    //password visibilty change set state controller set change to true or false
+                                    suffixIcon: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          passwordVisible = !passwordVisible;
+                                        });
+                                      },
+                                      icon: Icon(
+                                          // condidtional statement that returns the visibility or not visibile when this icon is clicked on
+                                          passwordVisible
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Colors.black),
+                                    ),
+                                    labelText: 'Password',
+                                    hintText: 'Enter your password',
+                                  ),
+                                )),
+                          ),
+
+                          //password field ends here
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20),
+                            child: Material(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(25),
+                              child: MaterialButton(
+                                child: isLoading
+                                    ? const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                            CircularProgressIndicator(
+                                                color: Colors.white),
+                                            SizedBox(width: 24),
+                                            Text(
+                                              'Please Wait...',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ])
+                                    : const Text(
+                                        'Login',
                                         style: TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
                                           color: Colors.white,
                                         ),
                                       ),
-                                    ])
-                              : const Text(
-                                  'Login',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                          onPressed: () async {
-                            if (isLoading) return;
-                            setState(() => isLoading = true);
-                            await Future.delayed(
-                                const Duration(milliseconds: 2));
-                            setState(() => isLoading = false);
-                          },
-                        ),
+                                onPressed: () async {
+                                  if (isLoading) return;
+                                  setState(() => isLoading = true);
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 2));
+                                  setState(() => isLoading = false);
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     //forgotpassword field
