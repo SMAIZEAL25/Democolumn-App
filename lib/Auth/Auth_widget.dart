@@ -22,10 +22,10 @@ var textFormDecoration = InputDecoration(
   hintText: 'Enter your full Name',
   border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
   enabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.purple, width: 1),
+      borderSide: const BorderSide(color: Colors.black, width: 1),
       borderRadius: BorderRadius.circular(25)),
   focusedBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2),
+      borderSide: const BorderSide(color: Colors.black, width: 2),
       borderRadius: BorderRadius.circular(25)),
 );
 
@@ -52,7 +52,7 @@ class AuthMainButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Material(
-        color: Colors.purple,
+        color: Colors.black,
         borderRadius: BorderRadius.circular(25),
         child: MaterialButton(
           minWidth: double.infinity,
@@ -93,9 +93,8 @@ class AlreadyHaveAccount extends StatelessWidget {
             child: Text(
               actionLabel,
               style: const TextStyle(
-                  color: Colors.purple,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                  color: Color.fromARGB(255, 10, 126, 221),
+                  fontWeight: FontWeight.bold),
             )),
       ],
     );

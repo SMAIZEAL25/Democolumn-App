@@ -3,7 +3,7 @@
 // import 'dart:io';
 //import 'dart:convert';
 // import 'package:http/http.dart' as http;
-import 'package:democolumn_app/mainscreen/main.dart';
+import 'package:democolumn_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:democolumn_app/Auth/Auth_widget.dart';
 
@@ -66,35 +66,8 @@ class _signup_page extends State<signup_page> {
                   key: _formKey,
                   child: Column(
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: Colors.purple,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15))),
-                        child: IconButton(
-                            icon: const Icon(
-                              Icons.camera_alt,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {}),
-                      ),
-                      const SizedBox(
-                        height: 6,
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: Colors.purple,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(15),
-                                bottomRight: Radius.circular(15))),
-                        child: IconButton(
-                            icon: const Icon(
-                              Icons.photo,
-                              color: Colors.white,
-                            ),
-                            onPressed: () {}),
-                      ),
+                      const Image(image: AssetImage('image/Nikelogo.png')),
+                      const SizedBox(height: 5),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         child: TextFormField(
@@ -170,11 +143,11 @@ class _signup_page extends State<signup_page> {
                                     passwordvisibile
 
                                         /// the passwordvisible is a bool varibale declared at the top of the class
+
                                         ? Icons.visibility
                                         : Icons
                                             .visibility_off, // the icons.visibility_off is an inverse of the visility icons
-                                    color:
-                                        const Color.fromARGB(255, 39, 167, 176),
+                                    color: Colors.black,
                                   )),
                               labelText: 'Password',
                               hintText: 'Enter your password',
