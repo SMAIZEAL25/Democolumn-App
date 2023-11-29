@@ -3,8 +3,9 @@
 // import 'dart:io';
 //import 'dart:convert';
 // import 'package:http/http.dart' as http;
+import 'package:democolumn_app/mainscreen/main.dart';
 import 'package:flutter/material.dart';
-import 'package:democolumn_app/Auth_widget.dart';
+import 'package:democolumn_app/Auth/Auth_widget.dart';
 
 class signup_page extends StatefulWidget {
   const signup_page({super.key});
@@ -50,6 +51,10 @@ class _signup_page extends State<signup_page> {
     return ScaffoldMessenger(
       key: _scaffoldKey,
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+        ),
         body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
@@ -178,7 +183,12 @@ class _signup_page extends State<signup_page> {
                       AlreadyHaveAccount(
                         haveAccount: 'Already have account',
                         actionLabel: 'Login',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const signin_page()));
+                        },
                       ),
                       AuthMainButton(
                         //validations during sign up to print valid and not valid
