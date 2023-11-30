@@ -15,15 +15,17 @@ class _SplashscreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        // widget holding the entire widgets
         child: Column(
           children: [
-            const SizedBox(height: 100),
+            const SizedBox(height: 120),
             const Image(
               image: AssetImage('image/Nikelogo.png'),
               height: 200,
               width: 300,
             ),
-            const SizedBox(height: 70),
+            const SizedBox(height: 120),
+            //Text widget  and stylings
             Text(
               'Just Do IT',
               style: GoogleFonts.bebasNeue(
@@ -34,15 +36,33 @@ class _SplashscreenState extends State<Splashscreen> {
             const SizedBox(
               height: 20,
             ),
-            const Text(''),
+            //Text widget  and stylings
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Brand new sneakers and custom kicks made with premiuim quality',
+                  style: GoogleFonts.lato(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
+              // materials widgets hoilding the materialbutton widget
               child: Material(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(25),
                 child: MaterialButton(
+                  //onpressed function with isloading boolean varible and text
                   onPressed: () async {
                     if (isLoading) return;
                     setState(() => isLoading = true);
@@ -59,6 +79,7 @@ class _SplashscreenState extends State<Splashscreen> {
                   child: isLoading == true
                       ? const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          //cirrcularprogressIndicator to show is progress of user's request
                           children: [
                               CircularProgressIndicator(color: Colors.white),
                               SizedBox(width: 20),
