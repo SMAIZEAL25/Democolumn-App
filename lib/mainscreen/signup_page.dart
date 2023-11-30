@@ -3,7 +3,7 @@
 // import 'dart:io';
 //import 'dart:convert';
 // import 'package:http/http.dart' as http;
-import 'package:democolumn_app/main.dart';
+
 import 'package:democolumn_app/mainscreen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:democolumn_app/Auth/Auth_widget.dart';
