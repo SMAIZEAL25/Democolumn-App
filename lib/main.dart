@@ -1,5 +1,4 @@
 import 'package:democolumn_app/Splashscreen/splach_screen.dart';
-import 'package:democolumn_app/mainscreen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
