@@ -1,4 +1,6 @@
 import 'package:democolumn_app/Splashscreen/splach_screen.dart';
+import 'package:democolumn_app/component/mybuttonwidget.dart';
+import 'package:democolumn_app/mainscreen/customerscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,8 +20,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: const WelcomeScreen(),
-      initialRoute: '/splashscreen',
+      initialRoute: '/customerscreen',
       routes: {
+        '/customerscreen': (context) => const customerscreen(),
         '/splashscreen': (context) => const Splashscreen(),
       },
     );

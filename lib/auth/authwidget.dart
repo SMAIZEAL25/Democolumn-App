@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class MymessageHandler {
+  // ignore: no_leading_underscores_for_local_identifiers
   static void showSnackBar(var _scaffoldKey, String message) {
     _scaffoldKey.currentState!.hideCurrentSnackBar();
     _scaffoldKey.currentState!.showSnackBar(SnackBar(

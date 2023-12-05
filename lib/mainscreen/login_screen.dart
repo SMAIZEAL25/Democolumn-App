@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:democolumn_app/mainscreen/forgot_pw_screen.dart';
 import 'package:democolumn_app/mainscreen/signup_page.dart';
-import 'package:democolumn_app/Auth/Auth_widget.dart';
+import 'package:democolumn_app/auth/authwidget.dart';
 
 void login() {
   runApp(

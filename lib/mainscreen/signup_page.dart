@@ -6,7 +6,7 @@
 
 import 'package:democolumn_app/mainscreen/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:democolumn_app/Auth/Auth_widget.dart';
+import 'package:democolumn_app/auth/authwidget.dart';
 
 class signup_page extends StatefulWidget {
   const signup_page({super.key});

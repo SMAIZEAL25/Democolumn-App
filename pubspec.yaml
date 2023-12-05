@@ -36,6 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
+  google_nav_bar: ^5.0.6
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,32 @@ flutter:
   assets:
     - image/nike.png
     - image/Nikelogo.png
+    - image/Shox/Shox1.jpeg
+    - image/Shox/Shox2.jpeg
+    - image/Shox/Shox3.jpeg
+    - image/Shox/Shox4.jpeg
+    - image/Shox/Shox5.jpeg
+    - image/Shox/Shox6.jpeg
+    - image/Shox/Shox7.jpeg
+    - image/Shox/Shox8.jpeg
+    - image/Shox/Shox9.jpeg
+    - image/Shox/Shox10.jpeg
+    - image/Shox/Shox11.jpeg
+    - image/Shox/Shox12.jpg
+    - image/NikeShoes/Capture2.jpg
+    - image/NikeShoes/Nikelogo.png
+    - image/NikeShoes/Shoe1.jpg
+    - image/NikeShoes/Shoe2.jpg
+    - image/NikeShoes/Shoe3.jpg
+    - image/NikeShoes/Shoe4.jpg
+    - image/NikeShoes/Shoe5.jpg
+    - image/NikeShoes/Shoe6.jpg
+    - image/NikeShoes/Shoe7.jpg
+    - image/NikeShoes/Shoe8.jpg
+    - image/NikeShoes/Shoe9.jpg
+    - image/NikeShoes/Shoe10.jpg
+    - image/NikeShoes/Shoe11.jpg
+    - image/NikeShoes/Shoe12.jpg
 
   #   - images/a_dot_ham.jpeg
 
