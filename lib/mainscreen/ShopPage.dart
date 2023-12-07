@@ -1,3 +1,5 @@
+import 'package:democolumn_app/component/Shoe_tile.dart';
+import 'package:democolumn_app/models/shoe.dart';
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
@@ -65,6 +67,31 @@ class _ShopPageState extends State<ShopPage> {
           ),
         ),
         const SizedBox(height: 10),
+
+        Expanded(
+          child: ListView.builder(
+            //list of shoes
+            itemCount: 8,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              // create a shoe
+              Shoe shoe = Shoe(
+                  description: 'Cool Shoe',
+                  price: '20',
+                  imagepath: 'image/NikeShoes/Shoe3.jpg',
+                  name: 'Air jordan');
+              return ShoeTile(
+                shoe: shoe,
+              );
+            },
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+          child: Divider(
+            color: Colors.white,
+          ),
+        )
       ],
     );
   }
