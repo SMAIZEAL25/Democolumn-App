@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
   google_nav_bar: ^5.0.6
+  provider:
 
 
 dev_dependencies:
@@ -77,20 +78,18 @@ flutter:
     - image/Shox/Shox10.jpeg
     - image/Shox/Shox11.jpeg
     - image/Shox/Shox12.jpg
-    - image/NikeShoes/Capture2.jpg
     - image/NikeShoes/Nikelogo.png
-    - image/NikeShoes/Shoe1.jpg
-    - image/NikeShoes/Shoe2.jpg
-    - image/NikeShoes/Shoe3.jpg
-    - image/NikeShoes/Shoe4.jpg
-    - image/NikeShoes/Shoe5.jpg
-    - image/NikeShoes/Shoe6.jpg
-    - image/NikeShoes/Shoe7.jpg
-    - image/NikeShoes/Shoe8.jpg
-    - image/NikeShoes/Shoe9.jpg
-    - image/NikeShoes/Shoe10.jpg
-    - image/NikeShoes/Shoe11.jpg
-    - image/NikeShoes/Shoe12.jpg
+    - image/NikeShoes/Shoe1.png
+    - image/NikeShoes/Shoe2.png
+    - image/NikeShoes/Shoe3.png
+    - image/NikeShoes/Shoe4.png
+    - image/NikeShoes/Shoe5.png
+    - image/NikeShoes/Shoe6.png
+    - image/NikeShoes/Shoe7.png
+    - image/NikeShoes/Shoe8.png
+    - image/NikeShoes/Shoe9.png
+    - image/NikeShoes/Shoe10.png
+    - image/NikeShoes/Shoe11.png
 
   #   - images/a_dot_ham.jpeg
 
