@@ -21,12 +21,14 @@ class mybuttonwidgetState extends StatelessWidget {
           tabBorderRadius: 16,
           //onTabchange is a methods here
           onTabChange: (value) => onTabChange!(value),
-          tabs: const [
+          tabs: [
             GButton(
+              onPressed: () {},
               icon: Icons.home,
               text: 'Shop',
             ),
             GButton(
+              onPressed: () {},
               icon: Icons.shopping_bag_rounded,
               text: 'Cart',
             )

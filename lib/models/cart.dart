@@ -1,18 +1,19 @@
 import 'package:democolumn_app/models/shoe.dart';
+import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class cart {
+class cart extends ChangeNotifier {
   List<Shoe> shoeShop = [
     Shoe(
         description: 'Mens Shoe',
         price: '236',
         imagepath: 'image/NikeShoes/Shoe1.png',
-        name: ' Nike Dunk Low Retro'),
+        name: ' Nike Dunk Low'),
     Shoe(
         description: 'Mens Shoe',
         price: '127.97',
         imagepath: 'image/NikeShoes/Shoe2.png',
-        name: 'Nike Blazer Phantom'),
+        name: 'Nike Blazer'),
     Shoe(
         description: 'Mens Shoe',
         price: '150.10',
@@ -27,22 +28,22 @@ class cart {
         description: 'Mens Shoe',
         price: '175.20',
         imagepath: 'image/NikeShoes/Shoe5.png',
-        name: 'Nike Sabrina 1 West Coast Roots'),
+        name: 'Nike Sabrina 1 West'),
     Shoe(
         description: 'Mens Shoe',
         price: '110.20',
         imagepath: 'image/NikeShoes/Shoe6.png',
-        name: 'Nike Zoom Vomero 5'),
+        name: 'Nike Zoom'),
     Shoe(
         description: 'Mens Shoe',
         price: '119.97',
         imagepath: 'image/NikeShoes/Shoe7.png',
-        name: 'Nike Dunk High Retro SE'),
+        name: 'Nike Dunk High'),
     Shoe(
         description: 'Mens Shoe',
         price: '260',
         imagepath: 'image/NikeShoes/Shoe8.png',
-        name: 'Nike Air More Uptempo'),
+        name: 'Nike Air More'),
     Shoe(
         description: 'Mens Shoe',
         price: '221',
@@ -64,9 +65,12 @@ class cart {
   // add items to cart
   void addItemToCart(Shoe shoe) {
     userCart.add(shoe);
+    notifyListeners();
   }
+
   // remoe item from cart
-   void removeItemToCart(Shoe shoe) {
+  void removeItemToCart(Shoe shoe) {
     userCart.remove(shoe);
+    notifyListeners();
   }
 }
