@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-// ignore: camel_case_types
+// ignore: camel_case_types, must_be_immutable
 class mybuttonwidgetState extends StatelessWidget {
   void Function(int)? onTabChange;
   mybuttonwidgetState({super.key, required this.onTabChange});
