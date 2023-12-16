@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 // ignore: camel_case_types, must_be_immutable
-class mybuttonwidgetState extends StatelessWidget {
+class mybuttonwidget extends StatelessWidget {
   void Function(int)? onTabChange;
-  mybuttonwidgetState({super.key, required this.onTabChange});
+  mybuttonwidget({super.key, required this.onTabChange});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +19,15 @@ class mybuttonwidgetState extends StatelessWidget {
           tabBackgroundColor: Colors.grey.shade200,
           mainAxisAlignment: MainAxisAlignment.center,
           tabBorderRadius: 16,
+          gap: 8,
           //onTabchange is a methods here
           onTabChange: (value) => onTabChange!(value),
-          tabs: [
+          tabs: const [
             GButton(
-              onPressed: () {},
               icon: Icons.home,
               text: 'Shop',
             ),
             GButton(
-              onPressed: () {},
               icon: Icons.shopping_bag_rounded,
               text: 'Cart',
             )

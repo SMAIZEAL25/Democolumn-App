@@ -1,6 +1,6 @@
 import 'package:democolumn_app/Splashscreen/splach_screen.dart';
 // import 'package:democolumn_app/component/mybuttonwidget.dart';
-import 'package:democolumn_app/mainscreen/customerscreen.dart';
+import 'package:democolumn_app/mainscreen/Home_page.dart';
 import 'package:democolumn_app/models/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -21,7 +21,7 @@ class _customerscreenState extends State<customerscreen> {
   //this method will update our selected index
   // when the user taps on the bottom bar
 
-  void navigateBttomBar(int index) {
+  void navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -39,8 +39,8 @@ class _customerscreenState extends State<customerscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      bottomNavigationBar: mybuttonwidgetState(
-        onTabChange: (index) {},
+      bottomNavigationBar: mybuttonwidget(
+        onTabChange: (index) => navigateBottomBar(index),
       ),
       appBar: AppBar(
         elevation: 0,

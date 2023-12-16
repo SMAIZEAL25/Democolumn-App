@@ -1,4 +1,6 @@
+import 'package:democolumn_app/component/cart_item.dart';
 import 'package:democolumn_app/models/cart.dart';
+import 'package:democolumn_app/models/shoe.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,17 +15,30 @@ class _CartpageState extends State<Cartpage> {
   @override
   Widget build(BuildContext context) {
     return Consumer<cart>(
-      builder: (context, value, child) => const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.0),
+      builder: (context, value, child) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'My Cart',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: value.getUserCart().length,
+                itemBuilder: (context, index) {
+                  //getv inidividual shoe
+                  Shoe individualShoe = value.getUserCart()[index];
+
+                  //return the cart item
+                  return CartItem(shoe: individualShoe);
+                },
+              ),
+            )
           ],
         ),
       ),
