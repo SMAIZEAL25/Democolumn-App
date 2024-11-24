@@ -14,7 +14,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 226, 226, 226),
+      backgroundColor: const Color.fromARGB(255, 226, 226, 226),
       body: Center(
         // widget holding the entire widgets
         child: Column(
