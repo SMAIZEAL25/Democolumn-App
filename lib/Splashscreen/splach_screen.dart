@@ -72,7 +72,7 @@ class _SplashscreenState extends State<Splashscreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const signin_page()))
+                              builder: (context) => const SignInPage()))
                     );
                     setState(() => isLoading = false);
                   },

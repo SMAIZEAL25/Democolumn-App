@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:democolumn_app/mainscreen/forgot_pw_screen.dart';
+import 'package:democolumn_app/mainscreen/forgotpassword.dart';
 import 'package:democolumn_app/mainscreen/signup_page.dart';
 import 'package:democolumn_app/auth/authwidget.dart';
 
@@ -8,29 +8,25 @@ void login() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: signin_page(),
+      home: SignInPage(),
     ),
   );
 }
 
-class signin_page extends StatefulWidget {
-  const signin_page({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<signin_page> createState() => _signin_pageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _signin_pageState extends State<signin_page> {
+class _SignInPageState extends State<SignInPage> {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
   bool passwordVisible = false;
-  void signUserin() {}
+  void signUserIn() {}
   //loading spinner
   bool isLoading = false;
-
-  // this for the sign up page
-  // static const TextStyle textfeildStyle =
-  //     TextStyle(fontSize: 15, fontStyle: FontStyle.italic, color: Colors.white);
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +114,7 @@ class _signin_pageState extends State<signin_page> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const forgotpassword()));
+                                            const ForgotPassword()));
                               },
                               child: const Text(
                                 'Forgot Password ?',

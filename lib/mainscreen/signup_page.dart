@@ -161,7 +161,7 @@ class _signup_page extends State<signup_page> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const signin_page()));
+                                  builder: (context) => const SignInPage()));
                         },
                       ),
                       AuthMainButton(
